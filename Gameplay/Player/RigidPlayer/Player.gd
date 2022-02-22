@@ -1,7 +1,10 @@
 extends RigidBody2D
 
 onready var mini_body = preload("res://Gameplay/Player/RigidPlayer/MiniPlayer/MiniPlayer.tscn")
-
+onready var min_scale = scale*0.3
+onready var min_mass = mass*0.75
+onready var curr_scale = scale
+onready var curr_mass = mass
 enum {
 	IDLE,
 	RUN,
@@ -91,6 +94,19 @@ func get_move_direction() -> Vector2:
 	)
 
 func spawn_mini():
+	curr_scale = curr_scale * 0.9
+	curr_mass = curr_mass * 0.99
+	if curr_scale<=min_scale:
+		curr_scale=min_scale
+		curr_mass = min_mass
+	scale = curr_scale
+	mass = curr_mass
+	get_node("Sprite").scale = curr_scale
+	get_node("CollisionShape2D").scale = curr_scale
 	var child = mini_body.instance()
 	child.position = position
+	child.scale = min_scale
+	child.get_node("Sprite").scale = min_scale
+	child.get_node("CollisionShape2D").scale = min_scale
+	child.mass = min_mass
 	get_parent().add_child(child)
