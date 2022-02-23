@@ -7,7 +7,7 @@
 friction = 0.0
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 18, 10 )
+extents = Vector2( 18, 13.375 )
 
 [node name="PlayerBody" type="RigidBody2D"]
 position = Vector2( 449, 304 )
@@ -26,7 +26,7 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 modulate = Color( 0.505882, 0.317647, 0.317647, 1 )
-position = Vector2( 0.5, 14.5 )
+position = Vector2( 0.5, 7.75 )
 scale = Vector2( 2, 2 )
 shape = SubResource( 3 )
 
