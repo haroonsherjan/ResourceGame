@@ -46,6 +46,8 @@ func _integrate_forces(state: Physics2DDirectBodyState) -> void:
 	
 	if Input.is_action_just_pressed("ui_space"):
 		spawn_mini()
+	elif Input.is_key_pressed(KEY_V):
+		recombine() #do combine
 	
 	match _state:
 		IDLE:
@@ -93,12 +95,16 @@ func get_move_direction() -> Vector2:
 		Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	)
 
+
+func recombine():
+	
+	pass
+
 func spawn_mini():
 	curr_scale = curr_scale * 0.9
 	curr_mass = curr_mass * 0.99
 	if curr_scale<=min_scale:
-		curr_scale=min_scale
-		curr_mass = min_mass
+		return
 	scale = curr_scale
 	mass = curr_mass
 	get_node("Sprite").scale = curr_scale
