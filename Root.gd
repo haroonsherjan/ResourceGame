@@ -1,7 +1,7 @@
 extends Node2D
 
 onready var menu = get_node("Menu")
-var game = preload("res://Gameplay/Game.tscn")
+var game = preload("res://Gameplay/l1.tscn")
 
 
 # Called when the node enters the scene tree for the first time.

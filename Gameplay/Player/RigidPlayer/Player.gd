@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+onready var jump_sound = preload("res://Audio/JumpS.wav")
+onready var split_sound = preload("res://Audio/split1.wav")
 onready var mini_body = preload("res://Gameplay/Player/RigidPlayer/MiniPlayer/MiniPlayer.tscn")
 onready var min_scale = scale*0.3
 onready var min_mass = mass*0.75
@@ -34,7 +36,16 @@ var states_strings := {
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+
 	pass # Replace with function body.
+
+func play_jump():
+	$AudioStreamPlayer2D.stream = jump_sound
+	$AudioStreamPlayer2D.play()
+
+func play_split():
+	$AudioStreamPlayer2D.stream = split_sound
+	$AudioStreamPlayer2D.play()
 
 func _integrate_forces(state: Physics2DDirectBodyState) -> void:
 	var is_on_ground := (
@@ -54,6 +65,7 @@ func _integrate_forces(state: Physics2DDirectBodyState) -> void:
 			if move_direction.x:
 				change_state(RUN)
 			elif is_on_ground and Input.is_action_pressed("ui_up"):
+				play_jump()
 				apply_central_impulse(Vector2.UP * jump_force)
 				change_state(AIR)
 		
@@ -63,6 +75,7 @@ func _integrate_forces(state: Physics2DDirectBodyState) -> void:
 			elif state.get_contact_count() == 0:
 				change_state(AIR)
 			elif is_on_ground and Input.is_action_pressed("ui_up"):
+				play_jump()
 				apply_central_impulse(Vector2.UP * jump_force)
 				change_state(AIR)
 			else:
@@ -103,12 +116,13 @@ func recombine():
 		print(dist)
 		if dist<50:
 			b.queue_free()
-			curr_scale = curr_scale*1.1
-			curr_mass = curr_mass*1.01
+			curr_scale = curr_scale*(1/0.9)
+			curr_mass = curr_mass*(1/0.99)
 			scale = curr_scale
 			mass = curr_mass
 			get_node("Sprite").scale = curr_scale
 			get_node("CollisionShape2D").scale = curr_scale
+			play_split()
 			break
 	
 
@@ -128,3 +142,4 @@ func spawn_mini():
 	child.get_node("CollisionShape2D").scale = min_scale
 	child.mass = min_mass
 	get_parent().add_child(child)
+	play_split()
