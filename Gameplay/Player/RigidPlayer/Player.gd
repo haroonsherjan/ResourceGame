@@ -46,7 +46,7 @@ func _integrate_forces(state: Physics2DDirectBodyState) -> void:
 	
 	if Input.is_action_just_pressed("ui_space"):
 		spawn_mini()
-	elif Input.is_key_pressed(KEY_V):
+	elif Input.is_action_just_pressed("recombinate"):
 		recombine() #do combine
 	
 	match _state:
@@ -97,8 +97,20 @@ func get_move_direction() -> Vector2:
 
 
 func recombine():
+	var blob = get_tree().get_nodes_in_group("blobs")
+	for b in blob:
+		var dist = position.distance_to(b.position)
+		print(dist)
+		if dist<50:
+			b.queue_free()
+			curr_scale = curr_scale*1.1
+			curr_mass = curr_mass*1.01
+			scale = curr_scale
+			mass = curr_mass
+			get_node("Sprite").scale = curr_scale
+			get_node("CollisionShape2D").scale = curr_scale
+			break
 	
-	pass
 
 func spawn_mini():
 	curr_scale = curr_scale * 0.9
