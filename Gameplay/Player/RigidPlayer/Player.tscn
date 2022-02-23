@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Gameplay/Player/RigidPlayer/Player.gd" type="Script" id=1]
-[ext_resource path="res://Gameplay/kbscene/char.png" type="Texture" id=2]
+[ext_resource path="res://Gameplay/kbscene/slime.png" type="Texture" id=2]
 
 [sub_resource type="PhysicsMaterial" id=2]
 friction = 0.0
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 19, 27 )
+extents = Vector2( 18, 10 )
 
 [node name="PlayerBody" type="RigidBody2D"]
 position = Vector2( 449, 304 )
@@ -24,7 +24,7 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 modulate = Color( 0.505882, 0.317647, 0.317647, 1 )
-position = Vector2( -1, 2 )
+position = Vector2( 0, 7 )
 shape = SubResource( 3 )
 
 [node name="JustAiredTimer" type="Timer" parent="."]
