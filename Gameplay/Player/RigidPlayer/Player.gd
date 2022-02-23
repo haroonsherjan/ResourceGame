@@ -97,9 +97,8 @@ func get_move_direction() -> Vector2:
 
 
 func recombine():
+	
 	pass
-	var closestMini = get_tree().get_nodes_in_group("MiniPlayer")
-	print(closestMini)
 
 func spawn_mini():
 	curr_scale = curr_scale * 0.9
