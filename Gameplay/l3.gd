@@ -15,7 +15,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(player.position.y)
+	#print(player.position.y)
 	if player.position.y > 1250:
 		get_tree().change_scene("res://Gameplay/l3.tscn")
 	
