@@ -3,7 +3,7 @@
 [ext_resource path="res://MainMenu/MainMenu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Root.gd" type="Script" id=2]
 
-[node name="Node2D" type="Node2D"]
+[node name="myroot" type="Node2D"]
 position = Vector2( 61, -145 )
 script = ExtResource( 2 )
 
