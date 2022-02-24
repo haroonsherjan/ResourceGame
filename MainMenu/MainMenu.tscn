@@ -3,6 +3,7 @@
 [ext_resource path="res://MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Gameplay/kbscene/cavebg1.png" type="Texture" id=2]
 
+
 [node name="Menu" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -11,6 +12,7 @@ margin_left = 421.0
 margin_top = 268.0
 margin_right = 555.0
 margin_bottom = 347.0
+
 action_mode = 0
 text = "Play Game"
 __meta__ = {
@@ -22,6 +24,7 @@ margin_left = 473.0
 margin_top = 235.0
 margin_right = 574.0
 margin_bottom = 249.0
+
 text = "Split"
 __meta__ = {
 "_edit_use_anchors_": false
