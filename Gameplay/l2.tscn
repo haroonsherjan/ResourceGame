@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Gameplay/kbscene/tileset.res" type="TileSet" id=1]
 [ext_resource path="res://Gameplay/Player/RigidPlayer/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
 [ext_resource path="res://Gameplay/l2.gd" type="Script" id=4]
+[ext_resource path="res://Gameplay/kbscene/cavebg1.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 21, 155 )
@@ -61,3 +62,9 @@ zoom = Vector2( 1.4, 1.4 )
 
 [node name="PlayerBody" parent="." instance=ExtResource( 2 )]
 position = Vector2( 48, 434 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 733.867, 188 )
+scale = Vector2( 1.43333, 1.43333 )
+z_index = -1
+texture = ExtResource( 5 )

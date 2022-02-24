@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Gameplay/kbscene/tileset.res" type="TileSet" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://Gameplay/Player/RigidPlayer/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Gameplay/l1.gd" type="Script" id=4]
+[ext_resource path="res://Gameplay/kbscene/cavebg1.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 21, 155 )
@@ -36,3 +37,12 @@ shape = SubResource( 1 )
 [node name="PinJoint2D" type="PinJoint2D" parent="StaticBody2D"]
 node_a = NodePath("../RigidBody2D")
 node_b = NodePath("..")
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 514, 303 )
+z_index = -1
+texture = ExtResource( 5 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 515, 303 )
+current = true
