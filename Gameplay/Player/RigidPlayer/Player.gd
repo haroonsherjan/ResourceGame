@@ -120,8 +120,9 @@ func recombine():
 			curr_mass = curr_mass*(1/0.99)
 			scale = curr_scale
 			mass = curr_mass
-			get_node("Sprite").scale = curr_scale
-			get_node("CollisionShape2D").scale = curr_scale
+			$Sprite.scale = curr_scale
+			#$Sprite.position.y -= 0.1
+			$CollisionShape2D.scale = curr_scale
 			play_split()
 			break
 	
@@ -133,8 +134,9 @@ func spawn_mini():
 		return
 	scale = curr_scale
 	mass = curr_mass
-	get_node("Sprite").scale = curr_scale
-	get_node("CollisionShape2D").scale = curr_scale
+	$Sprite.scale = curr_scale
+	#$Sprite.position.y += 0.1
+	$CollisionShape2D.scale = curr_scale
 	var child = mini_body.instance()
 	child.position = position
 	child.scale = min_scale
