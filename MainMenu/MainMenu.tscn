@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Gameplay/kbscene/cavebg1.png" type="Texture" id=2]
+[ext_resource path="res://ARIAL.TTF" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 3 )
 
 [node name="Menu" type="Node2D"]
 script = ExtResource( 1 )
@@ -11,6 +18,7 @@ margin_left = 421.0
 margin_top = 268.0
 margin_right = 555.0
 margin_bottom = 347.0
+custom_fonts/font = SubResource( 2 )
 action_mode = 0
 text = "Play Game"
 __meta__ = {
@@ -22,6 +30,7 @@ margin_left = 473.0
 margin_top = 235.0
 margin_right = 574.0
 margin_bottom = 249.0
+custom_fonts/font = SubResource( 1 )
 text = "Split"
 __meta__ = {
 "_edit_use_anchors_": false
