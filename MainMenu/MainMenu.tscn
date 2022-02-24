@@ -1,15 +1,21 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://MainMenu/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://ARIAL.TTF" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 58
+font_data = ExtResource( 2 )
 
 [node name="Menu" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="PlayGame" type="Button" parent="."]
-margin_left = 401.0
-margin_top = 253.0
-margin_right = 535.0
-margin_bottom = 332.0
+margin_left = 405.0
+margin_top = 260.0
+margin_right = 539.0
+margin_bottom = 339.0
+rect_scale = Vector2( 1.07407, 0.948276 )
 action_mode = 0
 text = "Play Game"
 __meta__ = {
@@ -21,7 +27,8 @@ margin_left = 416.0
 margin_top = 176.0
 margin_right = 517.0
 margin_bottom = 190.0
-text = "Resource Game"
+custom_fonts/font = SubResource( 1 )
+text = "Split"
 __meta__ = {
 "_edit_use_anchors_": false
 }

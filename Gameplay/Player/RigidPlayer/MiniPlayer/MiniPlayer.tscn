@@ -10,7 +10,6 @@ radius = 17.2627
 
 [node name="MiniPlayerBody" type="RigidBody2D" groups=["blobs"]]
 position = Vector2( 467, 346 )
-mode = 2
 physics_material_override = SubResource( 2 )
 gravity_scale = 8.5
 contacts_reported = 1
