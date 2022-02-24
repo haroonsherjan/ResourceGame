@@ -28,13 +28,13 @@ current = true
 zoom = Vector2( 2, 2 )
 
 [node name="Node2D2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 197, 560 )
+position = Vector2( 464, 597 )
 
 [node name="Node2D" parent="." instance=ExtResource( 4 )]
 position = Vector2( 813, 403 )
 
 [node name="Node2D3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 448, 832 )
+position = Vector2( 157, 832 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 1024, 597 )
